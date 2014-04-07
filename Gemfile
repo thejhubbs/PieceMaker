@@ -44,7 +44,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'bruise', path: '../../ast_engines/bruise/'
-gem 'permissionary', path: '../../ast_engines/permissionary/'
-gem 'clientalk', path: '../../ast_engines/clientalk/'
+gem 'bruise', git: 'https://github.com/thejhubbs/bruise.git'
+gem 'permissionary', git: 'https://github.com/thejhubbs/permissionary.git'
+gem 'clientalk', git: 'https://github.com/thejhubbs/clientalk.git'
 gem 'rails_12factor', group: :production

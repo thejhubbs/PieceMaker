@@ -1,5 +1,6 @@
-PATH
-  remote: ../../ast_engines/bruise/
+GIT
+  remote: https://github.com/thejhubbs/bruise.git
+  revision: ccf1f6ac508ee5f6b586fd537d0bda41c40b8bb9
   specs:
     bruise (0.1.0)
       coffee-rails (~> 4.0.0)
@@ -9,14 +10,16 @@ PATH
       turbolinks
       uglifier (>= 1.3.0)
 
-PATH
-  remote: ../../ast_engines/clientalk/
+GIT
+  remote: https://github.com/thejhubbs/clientalk.git
+  revision: 9efae25b2045316b9137fe487f37c0fda100b718
   specs:
     clientalk (0.0.1)
       rails (~> 4.0.4)
 
-PATH
-  remote: ../../ast_engines/permissionary/
+GIT
+  remote: https://github.com/thejhubbs/permissionary.git
+  revision: b5482f413d183d1647eb3c4e7780b2c84582c05d
   specs:
     permissionary (0.0.1)
       rails (~> 4.0.4)
