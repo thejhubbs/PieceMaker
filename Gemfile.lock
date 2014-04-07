@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/thejhubbs/bruise.git
-  revision: ccf1f6ac508ee5f6b586fd537d0bda41c40b8bb9
+  revision: 85042ac45c569578bdb1befce52267b8d2f98ea4
   specs:
     bruise (0.1.0)
       coffee-rails (~> 4.0.0)
@@ -128,7 +128,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.1)
+    turbolinks (2.2.2)
       coffee-rails
     tzinfo (0.3.39)
     uglifier (2.5.0)
