@@ -3,6 +3,8 @@ BruiseTest::Application.routes.draw do
   mount Permissionary::Engine, at: "/permissionary"
   mount Clientalk::Engine, at: "/clientalk"
   root 'site#index'
+  get 'contact' => 'contact#new'
+  post 'contact' => 'contact#create'
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
