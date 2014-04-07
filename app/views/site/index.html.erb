@@ -29,13 +29,4 @@
     </div>
   </div>
 </div>
-<div class='row'>
-<% Permissionary::Role.all.each do |r| %>
-  <div class='col-md-4 text' style='text-align:center;'>
-    <div class='well'>
-      <h2><%= link_to r.name %></h2>
-      <h3><small><%= r.description %></small></h3>
-    </div>
-  </div>
-<% end %>
-</div>
+
