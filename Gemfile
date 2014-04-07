@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.4'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -47,3 +47,4 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bruise', path: '../../ast_engines/bruise/'
 gem 'permissionary', path: '../../ast_engines/permissionary/'
 gem 'clientalk', path: '../../ast_engines/clientalk/'
+gem 'rails_12factor', group: :production
