@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @site_layout_options.title %></title>
+  <%= stylesheet_link_tag    "clientalk/application", media: "all" %>
+  <%= javascript_include_tag "clientalk/application" %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag @site_layout_options.favicon %>
+</head>
+<body style='background-image:url("<%= image_path @site_layout_options.bg_image %>");background-size:cover;'>
+  <%= image_tag @site_layout_options.logo, :size => '32x32' %><%= render 'layouts/clientalk/menu' %>
+  <div class='container'>
+    <%= yield %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+$('.<%=j @user.identifier("edit-form") %>').html("<%=j render @user.class.template_path('form', 'display'), :user => @user %>");
+$('.<%=j @user.identifier("edit-link") %>').html("<%=j link_to 'Full Edit', edit_user_path(@user), :class => 'btn btn-default' %>");
+$('#edit_user').modal('show');

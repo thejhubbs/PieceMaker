@@ -1,0 +1,6 @@
+<% i = @user.identifier('new') %>
+$('.<%=j i %>').children('.item-modal-show').show();
+$('.<%=j i %>').children('.item-modal-show').children('.item-modal-show-new').append("<%=j render @user.class.template_path('box', 'display'), :user => @user %><hr />");
+$('.<%=j i %>').children('.item-modal-new').hide();
+$('.<%=j i %>').children('.item-modal-new').html("<%=j render @user.class.template_path('form', 'display'), :user => @user.class.default %>");
+$(".<%= @user.identifier('list-section') %>").prepend("<%=j render @user.class.template_path('box', 'display'), :user => @user %>");

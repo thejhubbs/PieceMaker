@@ -1,0 +1,5 @@
+<% @users.each do |user| %>
+$(".<%= @users.identifier('list-section') %>").append("<%=j bruise_insert_item(user, 'box') %>");
+<% end %>
+$(".<%= @users.identifier('show-next') %>").html("<%=j link_to '>', @next_link, :remote => true, :class => 'btn btn-default btn-lg btn-block' %>");
+$(".<%= @users.identifier('show-more') %>").html("<%=j link_to 'Load More', @more_link, :remote => true, :class => 'btn btn-default btn-sm btn-block' %>");

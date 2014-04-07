@@ -1,0 +1,3 @@
+$(".<%=j @user.identifier('attr', @attribute) %>").children('.attr-form').hide();
+$(".<%=j @user.identifier('attr', @attribute) %>").children('.attr-display').show();
+$(".<%=j @user.identifier('attr', @attribute) %>").children('.attr-display').children('.attr-attr').html('<%= @user.send(@attribute) %>');

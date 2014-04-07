@@ -1,0 +1,11 @@
+<%= menu(image_tag(@site_layout_options.logo) + ' ' + @site_layout_options.title) do %>
+  
+  <% if @curr_user.account? %>
+    <li><%= link_to 'Logout', '/logout', :method => :delete %></li>
+    
+  <% else %>
+  <% end %>
+
+<% end %>
+
+  

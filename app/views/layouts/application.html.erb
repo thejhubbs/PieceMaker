@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html style='min-height:100%;'>
+<head>
+  <title><%= @site_layout_options.title %></title>
+  <%= stylesheet_link_tag    "clientalk/application", media: "all" %>
+  <%= javascript_include_tag "clientalk/application" %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag @site_layout_options.favicon %>
+  <link href='http://fonts.googleapis.com/css?family=Fugaz+One|Sofadi+One|Nunito' rel='stylesheet' type='text/css'>
+</head>
+<style>
+  .text { font-family: 'Nunito', cursive; }
+  .thick { font-family: 'Fugaz One', cursive; }
+  .funky { font-family: 'Sofadi One', cursive; }
+</style>
+<body style='
+      background-image:url("<%= image_path 'bg3.jpg' %>");
+      background-size:cover;
+      background-position: center  bottom;
+      min-height:100%;
+      
+      '>
+  <%= render 'layouts/menu' %>
+  <br /><br /><br />
+  <div class='container'>
+	<%= yield %>
+  </div>
+</body>
+</html>

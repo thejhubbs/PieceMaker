@@ -1,0 +1,5 @@
+$(".<%= @users.identifier('list') %>").html("<%=j bruise_reload_list(@users, 'full', 'box') %>");
+$(".<%= @users.identifier('show-next') %>").html("<%=j link_to '>', @next_link, :remote => true, :class => 'btn btn-default btn-lg btn-block' %>");
+$(".<%= @users.identifier('show-prev') %>").html("<%=j link_to '<', @prev_link, :remote => true, :class => 'btn btn-default btn-lg btn-block' %>");
+$(".<%= @users.identifier('show-more') %>").html("<%=j link_to 'Load More', @more_link, :remote => true, :class => 'btn btn-default btn-sm btn-block' %>");
+

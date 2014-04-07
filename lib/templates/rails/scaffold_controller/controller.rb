@@ -1,0 +1,101 @@
+<% if namespaced? -%>
+require_dependency "<%= namespaced_file_path %>/application_controller"
+
+<% end -%>
+<% module_namespacing do -%>
+class <%= controller_class_name %>Controller < ApplicationController
+  before_action :set_<%= singular_table_name %>, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
+
+  def index
+    limit = 10
+    page = params[:page] ? params[:page].to_i : 0
+
+    @<%= plural_table_name %> = <%= class_name %>.retrieve(page, limit)
+
+    @next_link = url_for(<%= class_name %>.params_to_retrieve(page, limit, 'next'))
+    @prev_link = url_for(<%= class_name %>.params_to_retrieve(page, limit, 'previous'))
+    @reload_link = url_for(<%= class_name %>.params_to_retrieve(page, limit, 'reload'))
+    more_params = <%= class_name %>.params_to_retrieve(page, limit, 'next')
+    more_params[:show_more] = 't' 
+    @more_link = url_for(more_params)
+
+    redir = params[:show_more] == 't' ? 'show_more' : 'index'
+    respond_to do |format|
+      format.html { render "<%= class_name.downcase.split('::').join('/').pluralize %>/html/index" }
+      format.js { render "<%= class_name.downcase.split('::').join('/').pluralize %>/js/#{redir}" }
+    end
+  end
+
+  def show
+    respond_to do |format|
+      format.html { render "<%= class_name.downcase.split('::').join('/').pluralize %>/html/show" }
+      format.js { render "<%= class_name.downcase.split('::').join('/').pluralize %>/js/show" }
+    end
+  end
+
+  def new
+    @<%= singular_table_name %> = <%= orm_class.build(class_name) %>
+    respond_to do |format|
+      format.html { render "<%= class_name.downcase.split('::').join('/').pluralize %>/html/new" }
+      format.js { render "<%= class_name.downcase.split('::').join('/').pluralize %>/js/new" }
+    end
+  end
+
+  def edit
+    respond_to do |format|
+      format.html { render "<%= class_name.downcase.split('::').join('/').pluralize %>/html/edit" }
+      format.js { render "<%= class_name.downcase.split('::').join('/').pluralize %>/js/edit" }
+    end
+  end
+
+  def create
+    @<%= singular_table_name %> = <%= orm_class.build(class_name, "#{singular_table_name}_params") %>
+    @<%= orm_instance.save %>
+    respond_to do |format|
+      format.html { render "<%= class_name.downcase.split('::').join('/').pluralize %>/html/create" }
+      format.js { render "<%= class_name.downcase.split('::').join('/').pluralize %>/js/create" }
+    end
+  end
+
+  def update
+    @<%= orm_instance.update("#{singular_table_name}_params") %>
+    if <%= singular_table_name %>_params.size > 1
+      redir_template = 'update_full'
+    else
+      @attribute = <%= singular_table_name %>_params.first[0].to_s
+      redir_template = 'update_attr'
+    end
+
+    respond_to do |format|
+      format.html { redirect_to @<%= singular_table_name %> }
+      format.js { render "<%= class_name.downcase.split('::').join('/').pluralize %>/js/#{redir_template}" }
+    end
+  end
+
+  def destroy
+    @identifier = @<%= singular_table_name %>.identifier('id')
+    @<%= orm_instance.destroy %>
+    respond_to do |format|
+      format.html { }
+      format.js { render "<%= class_name.downcase.split('::').join('/').pluralize %>/js/destroy" }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_<%= singular_table_name %>
+      id = params[:id] ? params[:id] : params[:<%= singular_table_name %>_id]
+      @<%= singular_table_name %> = <%= orm_class.find(class_name, "id") %>
+    end
+
+    # Only allow a trusted parameter "white list" through.
+    def <%= "#{singular_table_name}_params" %>
+      <%- if attributes_names.empty? -%>
+      params[:<%= singular_table_name %>]
+      <%- else -%>
+      params.require(:<%= singular_table_name %>).permit(<%= attributes_names.map { |name| ":#{name}" }.join(', ') %>)
+      <%- end -%>
+    end
+end
+<% end -%>

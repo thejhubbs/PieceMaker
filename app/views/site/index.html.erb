@@ -1,0 +1,18 @@
+<div class='jumbotron' style='background:none;text-align:center;'>
+  <h1 class='thick'>Piecemaker<br /><small class='thick'>
+      The Original Factory in a Store
+  </small></h1>
+</div>
+<div class='container-fluid' style='text-align:center;'>
+  <h1 class='text'>Are You...</h1><br />
+</div>
+<div class='row'>
+<% Permissionary::Role.all.each do |r| %>
+  <div class='col-md-4 text' style='text-align:center;'>
+    <div class='well'>
+      <h2><%= link_to r.name %></h2>
+      <h3><small><%= r.description %></small></h3>
+    </div>
+  </div>
+<% end %>
+</div>

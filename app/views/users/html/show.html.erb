@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<%= render User.template_path('edit_modal', 'display') %>
+
+<div class='row'>
+  <i>You might not want to use the same display template.</i><br />
+  <%= bruise_insert_item(@user, 'box') %>
+</div>
+
+<%= link_to 'Back to user', users_path %> |
+<%= link_to 'Edit', edit_user_path(@user), :remote => true %> 

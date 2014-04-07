@@ -1,0 +1,12 @@
+<%= modal("edit_user", 'edit-modal') do %>
+  <%= modal_header("Edit Record", "edit_user") %>
+  <%= modal_body do %>
+    <div class='<%= User.identifier %>-edit-form'>
+	
+    </div>
+  <% end %>
+  <%= modal_footer do %>
+    <span class='<%= User.identifier %>-edit-link'></span>
+  <% end %>
+<% end %>
+

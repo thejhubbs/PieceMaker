@@ -1,0 +1,33 @@
+<%= render User.template_path('add_modal', 'display') %>
+<%= render User.template_path('edit_modal', 'display') %>
+
+<div>
+  <div class="row list-inside">
+  <%= bruise_list_tag(users) do %>
+    <% users.each do |user| %>
+      <%= bruise_insert_item(user, template) %>
+    <% end %>
+  <% end %>
+  </div>
+
+  <div class='<%= users.identifier('show-more') %>' >
+    <%= link_to 'Load More', @more_link, :remote => true, :class => "btn btn-default btn-sm btn-block"  %>
+  </div>
+
+  <div class="row">
+    <div class='col-md-4'>
+      <div class='<%= users.identifier('show-prev') %>'>
+	<%= link_to '<', @prev_link, :remote => true, :class => "btn btn-default btn-lg btn-block"  %>
+      </div>
+    </div>
+    <div class='col-md-4'>
+      <%= modal_open("new_user", "Add A User", 'primary') %>
+    </div>
+    <div class='col-md-4'>
+      <div class='<%= users.identifier('show-next') %>'>
+	<%= link_to '>', @next_link, :remote => true, :class => "btn btn-default btn-lg btn-block"  %>
+      </div>
+    </div>
+  </div>
+
+</div>

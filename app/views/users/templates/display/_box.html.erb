@@ -1,0 +1,32 @@
+<%= bruise_item_tag(user) do %>
+
+<div class='item-show col-md-3'>
+  <div class='item-options'>
+    <%= link_to user do %>
+      View <%= glyphicon('eye-open') %><br />
+    <% end %>
+
+    <%= link_to edit_user_path(user), :remote => true do %>
+      Edit <%= glyphicon('pencil') %><br />
+    <% end %>
+    
+    <%= link_to user, :remote => true, :method => :delete do %>
+      Delete <%= glyphicon('remove-circle') %> <br />
+    <% end %>
+  </div>
+
+  <div class='panel panel-default'>
+    <div class='panel-heading'>Title</div>
+    <div class='panel-body'>
+          <%= bruise_full_attr(user, 'name') %><br />
+          <%= bruise_full_attr(user, 'email') %><br />
+          <%= bruise_full_attr(user, 'bio') %><br />
+          <%= bruise_full_attr(user, 'account_id') %><br />
+          <%= bruise_full_attr(user, 'status') %><br />
+        </div>
+  </div>
+
+</div>
+
+<% end %>
+

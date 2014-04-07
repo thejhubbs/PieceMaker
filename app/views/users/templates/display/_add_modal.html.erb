@@ -1,0 +1,22 @@
+<%= modal("new_user", 'new-modal') do %>
+  <%= modal_header("Create a New User", "new_user") %>
+  <%= modal_body do %>
+    <div class='<%= User.identifier %>-new'>
+      <div class='item-modal-show'>
+	<div class='item-modal-show-new'>
+	</div>
+	<div class='item-modal-switch btn btn-primary btn-lg btn-block'>
+	  <%= glyphicon('plus') %> Add Another
+	</div>
+	<br />
+      </div>
+      <div class='item-modal-new'>
+        <%= render User.template_path('form', 'display'), :user => User.default, :set_remote => true %>
+      </div>
+    </div>
+  <% end %>
+  <%= modal_footer do %>
+    &nbsp;
+  <% end %>
+<% end %>
+

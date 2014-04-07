@@ -1,0 +1,5 @@
+$('.<%=j @identifier %>').children('.item-modal-show').show();
+$('.<%=j @identifier %>').children('.item-modal-show').children('.item-modal-show-new').append("<%=j render 'display' %><hr />");
+$('.<%=j @identifier %>').children('.item-modal-new').hide();
+$('.<%=j @identifier %>').children('.item-modal-new').html("<%=j render 'form', :user => @user.class.default %>");
+$(".<%= @user.identifier('list') %>").children('.list-outside').children('.list-inside').prepend("<%=j render 'inner_list', :users => [@user], :width => 3 %>");
