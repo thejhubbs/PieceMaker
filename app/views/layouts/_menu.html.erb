@@ -1,12 +1,6 @@
 <%= menu(image_tag(@site_layout_options.logo) + ' ' + @site_layout_options.title) do %>
-<li><%= link_to 'How It Works' %></li>
-<li><%= link_to 'For Stores' %></li>
-<li><%= link_to 'Find a Toy Store' %></li>
-<li><%= link_to 'Toy Designers' %></li>
-<li><%= link_to 'About Us' %></li>
-  <% if @curr_user.account? %>
-    <li><%= link_to 'Logout', '/logout', :method => :delete %></li>
-  <% else %>
+  <% Clientalk::Page.all.each do |p| %>
+    <li><%= link_to p.name, page_path(p.name.downcase.parameterize) %></li>
   <% end %>
 <% end %>
 
