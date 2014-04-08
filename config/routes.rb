@@ -1,5 +1,6 @@
 BruiseTest::Application.routes.draw do
   get "site/index"
+  get "page/:name" => 'site#page', as: :page
   mount Permissionary::Engine, at: "/permissionary"
   mount Clientalk::Engine, at: "/clientalk"
   root 'site#index'
