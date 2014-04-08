@@ -88,7 +88,6 @@ config.action_mailer.default_url_options = { :host => 'http://piecemaker.herokua
     :domain => "gmail.com",
     :authentication => :login,
     :user_name => "thejhubbs@gmail.com",
-    :password => "200165070Jh",
-    :from => 'Supreme Network <do-not-reply@supremenetwork.com>'
+    :password => "200165070Jh"
   }
 end
