@@ -2,30 +2,4 @@
   <h1 class='thick'>The Original Factory in a Store<span style='font-size:.5em'>&#153;</span></h1>
 </div>
 <%= render 'works' %><br /><br />
-<div class='panel panel-primary'>
-  <div class='panel-heading'>
-    <h1 class='thick'>Contact Us</h1>
-  </div>
-  <div class='panel-body'>
-    <div class='row'>
-      <div class='col-md-6'>
-	<div class='jumbotron' style='background:none;text-align:center;'>
-	  <h2 class='text'>Want More Information About Our Company?</h2>
-	</div>
-      </div>
-      <div class='col-md-6'>
-	<%= form_for Message.new, :url => contact_path do |f| %>
-	  <b>I am...</b><br />
-	  <%= f.radio_button :role, :toy_store %> A Toy Store<br />
-	  <%= f.radio_button :role, :customer %> A Piecemaker Customer<br />
-	  <%= f.radio_button :role, :toy_maker %> A Toy-Maker<br /><br />
-	  <%= f.label :email %>
-	  <%= f.text_field :email, :class => 'form-control' %><br />
-	  <%= f.label :name %>
-	  <%= f.text_field :name, :class => 'form-control' %><br /><br />
-	  <%= f.submit "Send!", :class => 'form-control btn btn-block btn-primary' %>
-	<% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render 'contact_form' %>

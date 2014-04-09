@@ -3,31 +3,34 @@
 </div>
 <div class='row'>
   <div class='col-md-4'>
-    <div class='thumbnail'>
-      <div class='thick' style='text-align:center;'>
-	<h3 style='margin:8px;'>Find a Toy Store</h3>
+    <div class='thumbnail' style='text-align:center;'>
+      <div class='thick'>
+	<h3 style='margin:8px;'><%= link_to 'For Stores', page_path('for-stores') %></h3>
       </div>
-      <%= image_tag "1.jpg", :style => 'width:100%;' %>
-    <p class='text'>See if any stores near you carry our Factory-In-A-Store so you can get customized merchandise!</p>
+      <%= image_tag "2.jpg", :style => 'width:100%;' %>
+      <h4 class='text'>Ready For Retail Holiday 2014</h4>
+      <p class='text'>Click To Learn More</p>
     </div>
   </div>
   <div class='col-md-4'>
-    <div class='thumbnail'>
+    <div class='thumbnail' style='text-align:center;'>
       <div class='thick' style='text-align:center;'>
-	<h3 style='margin:8px;'>For Toy Stores</h3>
+	<h3 style='margin:8px;'><%= link_to 'For Consumers', page_path('for-consumers') %></h3>
       </div>
-      <%= image_tag "2.jpg", :style => 'width:100%;' %>
-      <p class='text'>Want to allow customers a unique experience and gain revenue? Our machines pay for themselves in no time.</p>
+      <%= image_tag "4.jpg", :style => 'width:100%;' %>
+      <h4 class='text'>Now Piloting</h4>
+      <p class='text'>Try out PieceMaker at SW Randall Toyes & Giftes at Squirrel Hill and Downtown Pittsburgh locations. </p>
     </div>
   </div>
   <div class='col-md-4'>
     
-    <div class='thumbnail'>
+    <div class='thumbnail' style='text-align:center;'>
       <div class='thick' style='text-align:center;'>
-	<h3 style='margin:8px;'>Toy Designers</h3>
+	<h3 style='margin:8px;'><%= link_to 'Toy Designers', page_path('toy-designers') %></h3>
       </div>
       <%= image_tag "3.jpg", :style => 'width:100%;' %>
-    <p class='text'>We want to work with motivated individuals who want to get their work to the world!</p>
+      <h4 class='text'>3-D Designers Wanted</h4>
+      <p class='text'>We want to work with motivated individuals who want to get their work to the world!</p>
     </div>
   </div>
 </div>

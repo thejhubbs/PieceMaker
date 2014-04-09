@@ -1,11 +1,13 @@
 
   <h1 class='thick'><%= @page.name %></h1>
   <p><%= @page.description %></p>
+  <% if false %>
   <i>I will take out this text area when it's time, but it's convienent to have here.</i><br />
   <%= form_for(@page, url: "/clientalk/pages/#{@page.id}", :method => :put) do |f| %>
 
     <%= f.text_area :information, :class => 'form-control' %>
     <%= f.submit "Save HTML" %>
+  <% end %>
   <% end %>
 
   <%= @page.information.to_s.html_safe %><br />
