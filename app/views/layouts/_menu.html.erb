@@ -1,11 +1,11 @@
 <%= menu(image_tag(@site_layout_options.logo) + ' ' + @site_layout_options.title) do %>
-  <% p = Clientalk::Page.where(:name => 'For Stores') %>
+  <% p = Clientalk::Page.where(:name => 'For Stores').first %>
   <li><%= link_to p.name, page_path(p.name.downcase.parameterize) %></li>
-  <% p = Clientalk::Page.where(:name => 'For Consumers') %>
+  <% p = Clientalk::Page.where(:name => 'For Consumers').first %>
   <li><%= link_to p.name, page_path(p.name.downcase.parameterize) %></li>
-  <% p = Clientalk::Page.where(:name => 'Toy Designers') %>
+  <% p = Clientalk::Page.where(:name => 'Toy Designers').first %>
   <li><%= link_to p.name, page_path(p.name.downcase.parameterize) %></li>
-  <% p = Clientalk::Page.where(:name => 'About Us') %>
+  <% p = Clientalk::Page.where(:name => 'About Us').first %>
   <li><%= link_to p.name, page_path(p.name.downcase.parameterize) %></li>
 <% end %>
 
