@@ -12,7 +12,7 @@
 
   <%= @page.information.to_s.html_safe %><br />
 
-  <% if @page.name.include? 'Toy' %><br /><br />
+  <% if @page.name.include? 'Toy' or @page.name.include? 'For' %><br /><br />
     <%= render 'contact_form' %>
     
   <% end %>
