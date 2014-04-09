@@ -9,3 +9,8 @@
   <% end %>
 
   <%= @page.information.to_s.html_safe %><br />
+
+  <% if @page.name.include? 'Toy' %><br /><br />
+    <%= render 'contact_form' %>
+    
+  <% end %>
